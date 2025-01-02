@@ -1,0 +1,83 @@
+
+/* Importation de la font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --blue-clr: #38b6ff;
+    --gray-clr: #898989;
+    --dark-blue-clr: #171C22;
+}
+
+/******** Début Navbar ********/
+
+.bg-blue {
+    background: var(--blue-clr);
+}
+
+.bg-dark-blue {
+    background: var(--dark-blue-clr);
+}
+
+.txt-blue {
+    color: var(--blue-clr);
+}
+
+.txt-gray {
+    color: var(--gray-clr);
+}
+
+/* Logo Navbar */
+
+.navbar-logo {
+    width: 8.5rem;
+}
+
+/* Fin logo Navbar */
+
+/* Bouton Navbar */
+
+.mybtn {
+    border: 0.1rem solid var(--blue-clr) !important;
+    padding: 0.5rem 1.6rem;
+}
+
+.mybtn:hover {
+    background: transparent;
+    color: var(--blue-clr) !important;
+}
+
+/* Fin boutton Navbar */
+
+/* Bouton responsive */
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 2.2rem;
+}
+
+/* Fin bouton responsive */
+
+/******** Fin Navbar ********/
+
+/******** Début Section ********/
+
+/* Image de la section */
+
+.image-container {
+    background: #38b6ff;
+    width: 32rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+/* Fin image de la section */
+
+.hero-section {
+    min-height: 85vh;
+}
+
+/******** Fin Section ********/
