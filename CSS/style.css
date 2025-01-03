@@ -69,21 +69,21 @@
 /* Image de la section */
 
 .image-container {
-    /* background: #38b6ff; */
     width: 32rem;
     aspect-ratio: 1;
     border-radius: 50%;
     border-top: 1rem solid white;
     border-bottom: 1rem solid white;
-    background-image: url();
+    background-image: url(../Images/photo-portfolio3.png);
     background-position: center;
-    background-size: 100%;
+    background-size: 180%;
+    box-shadow: 0 0 1rem white, inset 0 0 1rem white, 0 0 2rem var(--blue-clr), inset 0 0 2rem var(--blue-clr), 0 0 7rem var(--blue-clr), inset 0 0 4rem var(--blue-clr);
 }
 
 /* Fin image de la section */
 
 .hero-section {
-    min-height: 85vh;
+    min-height: 88vh;
 }
 
 h1 {
@@ -100,3 +100,19 @@ p {
 }
 
 /******** Fin Section ********/
+
+/******** Responsive ********/
+
+@media screen and (max-width: 680px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .image-container {
+        width: 20rem;
+    }
+
+    .hero-section {
+        min-height: 72vh;  
+    }
+}
