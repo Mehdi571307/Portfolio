@@ -4,6 +4,7 @@
 
 * {
     font-family: "Poppins", sans-serif;
+    /* border: 0.1rem solid white; */
 }
 
 :root {
@@ -28,6 +29,11 @@
 
 .txt-gray {
     color: var(--gray-clr);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Logo Navbar */
@@ -61,9 +67,9 @@
 
 /* Fin bouton responsive */
 
-/******** Fin Navbar ********/
+/******** Fin navbar ********/
 
-/******** Début Section ********/
+/******** Début section  ********/
 
 /* Image de la section */
 
@@ -71,13 +77,74 @@
     background: #38b6ff;
     width: 32rem;
     aspect-ratio: 1;
+    border-top: 1rem solid white;
+    border-bottom: 1rem solid white;
     border-radius: 50%;
+    background-image: url();
+    background-position: center;
+    background-size: 180%;
+    box-shadow: 
+    0 0 1rem white,
+    inset 0 0 1rem white,
+    0 0 2rem var(--gray-clr),
+    inset 0 0 2rem var(--gray-clr),
+    0 0 7rem var(--blue-clr),
+    inset 0 0 4rem var(--blue-clr);
 }
 
 /* Fin image de la section */
 
 .hero-section {
-    min-height: 85vh;
+    min-height: 88vh;
 }
 
-/******** Fin Section ********/
+h1 {
+    font-size: 4rem;
+    font-family: "Merriweather Sans", sans-serif;
+}
+
+.main-txt {
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+}
+
+.about-me {
+    width: 35rem;
+}
+
+.section-container {
+    padding-block: 4rem;
+}
+
+.glow {
+    position: relative;
+}
+
+.glow::before {
+    content: "";
+    background: var(--blue-clr);
+    position: absolute;
+    inset: 5rem;
+    left: 0;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(70px);
+}
+
+/******** Fin section ********/
+
+/********* responsive ********/
+
+@media screen and (max-width: 680px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .image-container {
+        width: 20rem;
+    }
+
+    .hero-section {
+        min-height: 72vh;
+    }
+}
