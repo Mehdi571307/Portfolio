@@ -1,7 +1,7 @@
 
 /* Importation de la font */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 * {
     font-family: "Poppins", sans-serif;
     /* border: 0.1rem solid white; */
@@ -74,77 +74,17 @@ img {
 /* Image de la section */
 
 .image-container {
-    background: #38b6ff;
     width: 32rem;
     aspect-ratio: 1;
     border-top: 1rem solid white;
     border-bottom: 1rem solid white;
     border-radius: 50%;
-    background-image: url();
-    background-position: center;
-    background-size: 180%;
-    box-shadow: 
-    0 0 1rem white,
-    inset 0 0 1rem white,
-    0 0 2rem var(--gray-clr),
-    inset 0 0 2rem var(--gray-clr),
-    0 0 7rem var(--blue-clr),
-    inset 0 0 4rem var(--blue-clr);
 }
 
 /* Fin image de la section */
 
 .hero-section {
-    min-height: 88vh;
+    min-height: 85vh;
 }
 
-h1 {
-    font-size: 4rem;
-    font-family: "Merriweather Sans", sans-serif;
-}
-
-.main-txt {
-    letter-spacing: 0.2rem;
-    font-size: 0.8rem;
-}
-
-.about-me {
-    width: 35rem;
-}
-
-.section-container {
-    padding-block: 4rem;
-}
-
-.glow {
-    position: relative;
-}
-
-.glow::before {
-    content: "";
-    background: var(--blue-clr);
-    position: absolute;
-    inset: 5rem;
-    left: 0;
-    border-radius: 50%;
-    z-index: -1;
-    filter: blur(70px);
-}
-
-/******** Fin section ********/
-
-/********* responsive ********/
-
-@media screen and (max-width: 680px) {
-    h1 {
-        font-size: 2.8rem;
-    }
-
-    .image-container {
-        width: 20rem;
-    }
-
-    .hero-section {
-        min-height: 72vh;
-    }
-}
+/******** Fin Section ********/
