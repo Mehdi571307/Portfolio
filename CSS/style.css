@@ -15,6 +15,24 @@
 
 /******** Début Navbar ********/
 
+.navbar-nav .nav-link {
+    color: white; 
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--blue-clr); /* Texte en blanc */
+    background-color: transparent; /* Pas de changement de fond */
+    text-shadow: 0 0 10px white, 0 0 20px white; /* Ombre lumineuse bleue autour du texte */
+}
+
+/* .navbar-nav .nav-link:hover {
+    color: var(--blue-clr);  
+    transition: color 0.3s ease;
+    box-shadow: 0 4px 10px var(--blue-clr); 
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
+} */
+
 .bg-blue {
     background: var(--blue-clr);
 }
@@ -34,6 +52,7 @@
 img {
     max-width: 100%;
     height: auto;
+    animation: reveal linear 1s;
 }
 
 /* Logo Navbar */
@@ -79,12 +98,240 @@ img {
     border-top: 1rem solid white;
     border-bottom: 1rem solid white;
     border-radius: 50%;
+    background-position: center;
+    background-size: 115%;
+    box-shadow: 
+    0 0 1rem white,
+    inset 0 0 1rem white,
+    0 0 2rem var(--blue-clr),
+    inset 0 0 2rem var(--blue-clr),
+    0 0 7rem var(--blue-clr),
+    inset 0 0 4rem var(--blue-clr);
+    animation: reveal linear 1s;
 }
 
 /* Fin image de la section */
 
 .hero-section {
-    min-height: 85vh;
+    min-height: 88vh;
 }
 
+h1 {
+    font-size: 4rem;
+    font-family: "Merriweather Sans", sans-serif;
+    animation: reveal linear 1s;
+}
+
+p {
+    font-size: 0.95rem;
+}
+
+.para {
+    max-width: 500px;
+}
+
+.main-txt {
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+}
+
+.about-me {
+    width: 35rem;
+    margin: 0 auto;
+}
+
+.section-container {
+    padding-block: 4rem;
+}
+
+.glow {
+    position: relative;
+}
+
+.glow::before {
+    content: "";
+    background: var(--blue-clr);
+    position: absolute;
+    inset: 4rem;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(70px);
+}
+
+/***** Début section card ******/
+
+/* .animation {
+    animation: reveal linear;
+    animation-timeline: view();
+} */
+
+.hover-card:hover {
+    background: var(--blue-clr);
+}
+
+.hover-card:hover * {
+    color: black;
+}
+
+.hover-mybtn {
+    border: 0.1rem solid var(--blue-clr);
+    background: var(--blue-clr);
+    color: var(--dark-blue-clr);
+}
+
+.hover-card:hover .hover-mybtn {
+    background: var(--dark-blue-clr);
+    color: var(--blue-clr);
+  }
+
+.hover-mybtn:hover {
+    border: 0.1rem solid var(--dark-blue-clr);
+    background: var(--dark-blue-clr);
+    color: var(--blue-clr);
+}
+
+
+/***** Fin section card ********/
+
+/****** Début section compétences ******/
+
+.animation {
+    animation: reveal linear;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 50%;
+}
+
+.skills {
+    background: black;
+    margin-top: 120px;
+}
+
+.skills .container {
+    background: black;
+    color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 70%;
+}
+
+.skills .container .row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    flex-wrap: wrap;
+    gap: 1.8rem;
+}
+
+.skills .container .bar {
+    margin-bottom: 120px;
+    margin-top: 120px;
+    padding: 10px;
+    border-radius: 1rem;
+    background: black;
+    box-shadow: 0 4px 10px var(--blue-clr);
+    transition: 0.3s ease;
+}
+
+.skills .container .bar:hover {
+    box-shadow: 0 4px 10px white;
+    transform: scale(1.03);
+}
+
+.skills .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skills .container .bar .info span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+#progress {
+    background-color: #03cc65;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    height: 70px;
+    width: 70px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#progress-value {
+    display: block;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 35px;
+    color: #001a2e;
+}
+
+
+/****** Fin section compétences ********/
+
 /******** Fin Section ********/
+
+/******** responsive ********/
+
+@media screen and (max-width: 680px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .image-container {
+        width: 20rem;
+    }
+
+    .hero-section {
+        min-height: 72vh;
+    }
+
+    .about-me {
+        width: 23rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .skills .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .skills .container .row {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1rem;
+        padding: 2rem 0.2rem 2rem 0.2rem;
+        gap: 1rem;
+    }
+
+    .skills .container {
+        margin-top: 5px;
+        width: 100%;
+    }
+}
+
+/***** Animation *****/
+
+@keyframes reveal {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+}

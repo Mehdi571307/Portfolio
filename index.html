@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/script.js"></script>
     <title>Portfolio</title>
 </head>
 <body class="bg-black">
@@ -20,19 +21,16 @@
             <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto mb-2 mb-lg-0 gap-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">À propos</a>
+                        <a class="nav-link" href="#about-me">À propos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Portfolio</a>
+                        <a class="nav-link" href="#skills">Mes compétences</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Mes projets</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Blog</a>
+                        <a class="nav-link" href="#projet">Mes projets</a>
                     </li>
                 </ul>
                 <a class="btn mybtn rounded-0 text-uppercase bg-blue" href="mailto:begna.mehdi@gmail.com" role="button">Me contacter</a>
@@ -41,19 +39,19 @@
     </nav>
 
     <!-- Début de main -->
-
+    <!-- Début section hero -->
     <main>
-        <section class="hero-section bg-black">
+        <section class="hero-section bg-black d-flex align-items-center">
             <div class="container">
                 <div class="row align-items-center gap-5 gap-lg-0">
                     <div class="col-lg-6">
-                        <span class="text-white">Bonjour, Je suis</span>
-                        <h1 class="text-white">Developpeur Web & <span class="txt-blue">Web Mobile</span></h1>
-                        <p class="txt-gray">
+                        <span class="text-white text-uppercase main-txt">Bonjour, Je suis</span>
+                        <h1 class="text-white fw-bold">Developpeur Web & <span class="txt-blue">Web Mobile</span></h1>
+                        <p class="txt-gray my-4 para">
                             Je m'appelle Mehdi Begna et je suis un développeur web et mobile passionné.
                             Bienvenue sur mon Portfolio.
                         </p>
-                        <a class="btn mybtn rounded-0 text-uppercase bg-blue" href="#" role="button">Voir mon portfolio</a>
+                        <a class="btn mybtn rounded-0 text-uppercase bg-blue" href="#projet" role="button">Voir mes projets</a>
                     </div>
     
                     <div class="col-lg-6">
@@ -65,11 +63,13 @@
         <!-- Fin section hero -->
 
         <!-- section -->
-        <section class="section-container">
+        <section class="section-container" id="about-me">
             <div class="container">
                 <div class="row align-items-center gap-5 gap-lg-0">
-                    <div class="col-lg-6 glow order-last order-lg-first">
-                        <img src="Images/logo2.png" alt="À propos" class="about-me">
+                    <div class="col-lg-6 order-last order-lg-first">
+                        <div class="about-me glow">
+                            <img src="Images/logo2.png" alt="À propos">
+                        </div>
                     </div>
                     <div class="col-lg-6">
                         <span class="text-white text-uppercase main-txt">Laissez-moi me présenter</span>
@@ -90,8 +90,129 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section class="section-container">
         <!-- Fin de section -->
+        <!-- Section compétances -->
+        <section class="skills text-center" id="skills">
+            <h2 class="txt-blue fw-semibold animation">Mes Compétences</h2>
+            <div class="container">
+                <div class="row align-items-center gap-5 gap-lg-0" id="skillsContainer">
+                    <div class="bar">
+                        <div class="info">
+                            <img src="Images/html-5.png" alt="Logo html 5">
+                            <span>HTML</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="Images/css-3.png" alt="Logo html 5">
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="Images/icons8-bootstrap-512.png" alt="Logo html 5">
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="Images/python.png" alt="Logo html 5">
+                            <span>Python</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="Images/serveur-sql.png" alt="Logo html 5">
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <img src="Images/wordpress.png" alt="Logo html 5">
+                            <span>Wordpress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin de section compétances -->
+        <!-- Début section card -->
+        <section id="projet">
+            <div class="container text-center">
+                <span class="text-white text-uppercase main-txt"></span>
+                <h2 class="txt-blue fw-semibold animation">Mes projets</h2>
+                <div class="row mt-5 gap-4 gap-lg-0">
+                    <div class="col-lg-4 mt-4">
+                        <div class="card bg-dark-blue py-5 glow hover-card">
+                            <div class="card-body ">
+                                <img src="..." class="card-img-top mb-4" alt="...">
+                                <h5 class="card-title text-white fs-4 mb-3">Projet 1</h5>
+                                <p class="card-text txt-blue">With supporting text below as a natural lead-in to additional content.</p>
+                                <a class="btn hover-mybtn rounded-0 text-uppercase bg-blue" href="#" role="button">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4">
+                        <div class="card bg-dark-blue py-5 hover-card">
+                            <div class="card-body">
+                                <img src="..." class="card-img-top mb-4" alt="...">
+                                <h5 class="card-title text-white fs-4 mb-3">Projet 2</h5>
+                                <p class="card-text txt-blue">With supporting text below as a natural lead-in to additional content.</p>
+                                <a class="btn hover-mybtn rounded-0 text-uppercase bg-blue" href="#" role="button">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4">
+                        <div class="card bg-dark-blue py-5 hover-card">
+                            <div class="card-body">
+                                <img src="..." class="card-img-top mb-4" alt="...">
+                                <h5 class="card-title text-white fs-4 mb-3">Projet 3</h5>
+                                <p class="card-text txt-blue">With supporting text below as a natural lead-in to additional content.</p>
+                                <a class="btn hover-mybtn rounded-0 text-uppercase bg-blue" href="#" role="button">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4">
+                        <div class="card bg-dark-blue py-5 glow hover-card">
+                            <div class="card-body">
+                                <img src="..." class="card-img-top mb-4" alt="...">
+                                <h5 class="card-title text-white fs-4 mb-3">Projet 4</h5>
+                                <p class="card-text txt-blue">With supporting text below as a natural lead-in to additional content.</p>
+                                <a class="btn hover-mybtn rounded-0 text-uppercase bg-blue" href="#" role="button">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4">
+                        <div class="card bg-dark-blue py-5 glow hover-card">
+                            <div class="card-body">
+                                <img src="..." class="card-img-top mb-4" alt="...">
+                                <h5 class="card-title text-white fs-4 mb-3">Projet 5</h5>
+                                <p class="card-text txt-blue">With supporting text below as a natural lead-in to additional content.</p>
+                                <a class="btn hover-mybtn rounded-0 text-uppercase bg-blue" href="#" role="button">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4">
+                        <div class="card bg-dark-blue py-5 glow hover-card">
+                            <div class="card-body">
+                                <img src="..." class="card-img-top mb-4" alt="...">
+                                <h5 class="card-title text-white fs-4 mb-3">Projet 6</h5>
+                                <p class="card-text txt-blue">With supporting text below as a natural lead-in to additional content.</p>
+                                <a class="btn hover-mybtn rounded-0 text-uppercase bg-blue" href="#" role="button">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin de section card -->
+        <!-- Bouton retour haut de page -->
+         <div id="progress">
+            <span id="progress-value">&#x1F815;</span>
+         </div>
+        <!-- Fin de bouton retour haut de page -->
+
     </main>
     <!-- Fin de main -->
 
