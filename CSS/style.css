@@ -7,31 +7,164 @@
     /* border: 0.1rem solid white; */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --blue-clr: #38b6ff;
     --gray-clr: #898989;
     --dark-blue-clr: #171C22;
 }
 
+/* Début animation background */
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+.wrapper span {
+    position: fixed;
+    bottom: -180px;
+    height: 50px;
+    width: 50px;
+    z-index: -1;
+    background-color: black;
+    box-shadow: 0 0 50px var(--blue-clr),
+                0 0 100px var(--blue-clr),
+                0 0 150px var(--blue-clr),
+                0 0 200px var(--blue-clr);
+    animation: animate 10s linear infinite;
+}
+
+.wrapper span:nth-child(1) {
+    left: 60px;
+    animation-delay: 0.6s;
+}
+
+.wrapper span:nth-child(2) {
+    left: 10%;
+    animation-delay: 3s;
+    width: 60px;
+    height: 60px;
+}
+
+.wrapper span:nth-child(3) {
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.wrapper span:nth-child(4) {
+    left: 30%;
+    animation-delay: 5s;
+    width: 80px;
+    height: 80px;
+}
+
+.wrapper span:nth-child(5) {
+    left: 40%;
+    animation-delay: 1s;
+}
+
+.wrapper span:nth-child(6) {
+    left: 50%;
+    animation-delay: 7s;
+}
+
+.wrapper span:nth-child(7) {
+    left: 60%;
+    animation-delay: 6s;
+    width: 100px;
+    height: 100px;
+}
+
+.wrapper span:nth-child(8) {
+    left: 70%;
+    animation-delay: 8s;
+}
+
+.wrapper span:nth-child(9) {
+    left: 80%;
+    animation-delay: 6s;
+    width: 90px;
+    height: 90px;
+}
+
+.wrapper span:nth-child(10) {
+    left: 90%;
+    animation-delay: 4s;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Fin animation background */
+
 /******** Début Navbar ********/
 
+.navbar {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
 .navbar-nav .nav-link {
+    position: relative;
     color: white; 
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--blue-clr); /* Texte en blanc */
-    background-color: transparent; /* Pas de changement de fond */
-    text-shadow: 0 0 10px white, 0 0 20px white; /* Ombre lumineuse bleue autour du texte */
+    color: var(--blue-clr); 
+    background-color: transparent; 
+    text-shadow: 0 0 10px white, 0 0 20px white; 
 }
 
-/* .navbar-nav .nav-link:hover {
-    color: var(--blue-clr);  
-    transition: color 0.3s ease;
-    box-shadow: 0 4px 10px var(--blue-clr); 
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
-} */
+.navbar-nav .nav-link span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-bottom: 2px solid var(--blue-clr);
+    border-radius: 15px;
+    transform: scale(0) translateY(50px);
+    transition: 0.5s;
+}
+
+.navbar-nav .nav-link:hover span {
+    transform: scale(1) translateY(0);
+}
 
 .bg-blue {
     background: var(--blue-clr);
@@ -55,15 +188,30 @@ img {
     animation: reveal linear 1s;
 }
 
+.navbar-nav .nav-link span {
+    transform: scale(0); /* Désactive la transformation au survol */
+}
+
+
 /* Logo Navbar */
 
 .navbar-logo {
     width: 8.5rem;
+    height: auto;
 }
 
 /* Fin logo Navbar */
 
+/* Réglage du scroll */
+
+section {
+    scroll-margin-top: 80px; /* Ajustez cette valeur selon la hauteur de votre navbar sticky */
+}
+
+/* Fin Réglage du scroll */
+
 /* Bouton Navbar */
+
 
 .mybtn {
     border: 0.1rem solid var(--blue-clr) !important;
@@ -79,10 +227,93 @@ img {
 
 /* Bouton responsive */
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    width: 2.2rem;
+.hamburger-wrapper {
+    position: relative;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: black;
+    box-shadow: 
+        0 0 5px var(--blue-clr),
+        0 0 5px var(--blue-clr),
+        0 0 5px var(--blue-clr),
+        0 0 5px var(--blue-clr);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
 }
+
+.hamburger-icon {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(0);
+    transition: 1s;
+}
+
+.hamburger-wrapper.active .hamburger-icon {
+    transform: rotate(315deg);
+}
+
+.hamburger-icon span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(45deg, var(--blue-clr), var(--dark-blue-clr));
+    border: 2px solid var(--blue-clr);
+    border-radius: 5px;
+    box-shadow: 
+        0 0 1px var(--blue-clr),
+        0 0 1px var(--blue-clr);
+    transition: 0.3s;
+    transition-delay: 1s;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 50%;
+    transform: translateY(0px);
+}
+
+.hamburger-wrapper.active span:nth-child(1) {
+    width: 100%;
+    transform: translateY(10px);
+    transition-delay: 0s;
+}
+
+.hamburger-icon span:nth-child(2) {
+    width: 100%;
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.hamburger-wrapper.active span:nth-child(2) {
+    transform: scaleX(0);
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+.hamburger-icon span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    transform: rotate(0);
+}
+
+.hamburger-wrapper.active span:nth-child(3) {
+    bottom: 5px;
+    width: 100%;
+    transform: rotate(90deg);
+    transition-delay: 0s;
+}
+
+
+
 
 /* Fin bouton responsive */
 
@@ -108,6 +339,7 @@ img {
     0 0 7rem var(--blue-clr),
     inset 0 0 4rem var(--blue-clr);
     animation: reveal linear 1s;
+    background-color: black;
 }
 
 /* Fin image de la section */
@@ -124,6 +356,10 @@ h1 {
 
 p {
     font-size: 0.95rem;
+}
+
+span {
+    color: var(--blue-clr);
 }
 
 .para {
@@ -203,12 +439,12 @@ p {
 }
 
 .skills {
-    background: black;
+    /* background: black; */
     margin-top: 120px;
 }
 
 .skills .container {
-    background: black;
+    /* background: black; */
     color: white;
     border-radius: 1rem;
     padding: 2rem;
@@ -252,37 +488,182 @@ p {
 }
 
 #progress {
-    background-color: #03cc65;
     position: fixed;
     bottom: 20px;
     right: 10px;
     height: 70px;
     width: 70px;
-    display: grid;
+    display: none;
     place-items: center;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px var(--blue-clr);
     cursor: pointer;
-}
-
-#progress-value {
+  }
+  #progress-value {
     display: block;
     height: calc(100% - 15px);
     width: calc(100% - 15px);
-    background-color: #ffffff;
+    background-color: black;
     border-radius: 50%;
     display: grid;
     place-items: center;
     font-size: 35px;
-    color: #001a2e;
-}
+    color: var(--blue-clr);
+  }
 
 
 /****** Fin section compétences ********/
 
 /******** Fin Section ********/
 
+/******* Début footer ********/
+
+footer {
+    position: relative;
+    width: 100%;
+    background-color: black;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 400px;
+}
+
+footer .social-icon,
+footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+footer .social-icon li,
+footer .menu li {
+    list-style: none;
+}
+
+footer .social-icon li a {
+    font-size: 2rem;
+    color: white;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+footer .social-icon li a:hover {
+    transform: translateY(-10px);
+    color: var(--blue-clr); 
+    background-color: transparent; 
+}
+
+footer .menu li a {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+footer .menu li a:hover {
+    color: var(--blue-clr); 
+    background-color: transparent; 
+    text-shadow: 0 0 10px white, 0 0 20px white; 
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+footer .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../Images/wave.png);
+    background-size: 1000px 100px;
+}
+
+footer .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+
+footer .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+}
+
+footer .wave#wave3{
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+
+footer .wave#wave4{
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave {
+   0% 
+   {
+       background-position-x: 1000px;
+   }
+   100%
+   {
+       background-position-x: 0px;
+   }
+}
+
+@keyframes animateWave_02 { 
+    0% 
+    {
+        background-position-x: 0px;
+    }
+    100%
+    {
+        background-position-x: 1000px;
+    }
+ }
+
+/******** Fin footer *********/
+
 /******** responsive ********/
+
+@media screen and (max-width: 768px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.8); /* Opacité de 80% */
+    }
+
+    /* Empêcher les effets de survol sur les boutons du menu */
+    .navbar-nav .nav-link:hover {
+        background-color: transparent; /* Désactive l'effet de fond au survol */
+        color: var(--blue-clr); /* Vous pouvez aussi ajouter une couleur différente au survol */
+        text-shadow: none; /* Retire l'effet de texte au survol */
+    }
+
+    /* L'effet de la barre sous les liens de navigation */
+    .navbar-nav .nav-link span {
+        transform: scale(0); /* Masque l'élément de la barre sous les liens */
+    }
+}
 
 @media screen and (max-width: 680px) {
     h1 {
@@ -299,6 +680,10 @@ p {
 
     .about-me {
         width: 23rem;
+    }
+
+    .wrapper {
+        display: none;
     }
 }
 
